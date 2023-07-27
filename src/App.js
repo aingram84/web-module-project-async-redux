@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { getJokes } from './actions';
-import JokeList from './components/JokeList';
+import JokeView from './components/JokeView';
 import axios from 'axios';
 import Joke from './components/joke';
 import { Route, Switch } from 'react-router-dom';
@@ -15,7 +15,7 @@ function App(props) {
       <JokeList />
       <Switch>
         <Route exact path="/jokes">
-        <JokeList />
+        <JokeView />
         </Route>
         <Route path = "/jokes/:jokeID" element = {<Joke />}>
         <Joke jokes = {props.displayJokes} />
