@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { GET_JOKES_ALL } from "../actions";
-import JokeList from "./jokelist";
+import JokeList from './JokeList';
+
 
 const AllJokes = ({ jokes, displayJokes, allJokes }) => {
     const newJokes = (jokesArray) => {
