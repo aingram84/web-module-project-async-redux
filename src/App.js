@@ -15,7 +15,7 @@ function App(props) {
 
   useEffect(() => {
     dispatch(getJokes());
-  }, [dispatch]);
+  }, []);
 
   console.log("props.displayJokes LOG", props.displayJokes);
   return (
@@ -40,4 +40,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, {})(App);
+export default connect(mapStateToProps)(App);
