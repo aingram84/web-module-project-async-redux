@@ -17,11 +17,10 @@ function App(props) {
     dispatch(getJokes());
   }, []);
 
-  console.log("props.displayJokes LOG", props.displayJokes);
-  return (
+    return (
     <div className="App">
       Async Redux Project
-      <JokeList joke={props.displayJokes} />
+      {/* {props.displayJokes} */}
       <Switch>
         <Route exact path="/jokes">
           <JokeView />
@@ -36,7 +35,7 @@ function App(props) {
 
 const mapStateToProps = state => {
   return {
-    displayJokes: state.joke.displayJokes
+    displayJokes: state.joke.jokes
   };
 };
 

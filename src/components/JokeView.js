@@ -6,7 +6,7 @@ import AllJokes from "./AllJokes";
 const JokeView = ({ getJokes, isFetching, error, dynamic, displayJokes }) => {
   return (
     <div>
-      {dynamic ? (
+      {/* {dynamic ? (
         <div>
           {dynamic && <AllJokes />}
         </div>
@@ -15,7 +15,8 @@ const JokeView = ({ getJokes, isFetching, error, dynamic, displayJokes }) => {
           <p>{error}</p>
           <button onClick={() => getJokes()}></button>
         </div>
-      )}
+      )} */}
+      <AllJokes />
     </div>
   );
 };
