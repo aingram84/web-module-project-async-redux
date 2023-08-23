@@ -1,27 +1,31 @@
-import React, { useEffect } from 'react';
-import './App.css';
-import { getJokes } from './actions';
-import JokeView from './components/JokeView';
-import axios from 'axios';
-import Joke from './components/Joke';
-import { Route, Switch } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { useDispatch } from 'react-redux';
-import JokeList from './components/JokeList';
+import React, { useEffect } from "react";
+import "./App.css";
+import { getJokes } from "./actions";
+import JokeView from "./components/JokeView";
+import axios from "axios";
+import Joke from "./components/Joke";
+import { Route, Switch } from "react-router-dom";
+import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
+import JokeList from "./components/JokeList";
+import AllJokes from "./components/AllJokes";
 
 function App(props) {
-  console.log(`Props Log: ${JSON.stringify(props)}`)
+  console.log(`Props Log: ${JSON.stringify(props)}`);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getJokes());
   }, []);
 
-    return (
+  return (
     <div className="App">
       Async Redux Project
       {/* {props.displayJokes} */}
       <Switch>
+        <Route exact path="/">
+          <AllJokes />
+        </Route>
         <Route exact path="/jokes">
           <JokeView />
         </Route>
@@ -33,9 +37,9 @@ function App(props) {
   );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    displayJokes: state.joke.jokes
+    displayJokes: state.joke.jokes,
   };
 };
 
